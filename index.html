@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mermaid Graph Visualizer</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@12/dist/mermaid.min.js"></script>
+    <style>
+        body { margin: 0; overflow: hidden; background: transparent; pointer-events: none; }
+        canvas { display: block; }
+        #controls {
+            position: absolute; top: 10px; left: 10px;
+            color: white; font-family: sans-serif;
+            background: rgba(0,0,0,0.5); padding: 10px; border-radius: 6px;
+            pointer-events: auto;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <strong>Mermaid Graph</strong><br>
+        <textarea id="mermaid" rows="6" style="width:260px; font-family:monospace; font-size:12px;">graph TD
+    A[Start] --> B{Is it working?}
+    B -- Yes --> C[Great!]
+    B -- No --> D[Debug code]
+    D --> B</textarea><br>
+        <button id="load">Load Graph</button>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="nodle.js"></script>
+</body>
+</html>
